@@ -1,0 +1,307 @@
+entity TenderSchedule{
+nitId Long required,
+tenderNumber String required maxlength(50),
+title String required maxlength(512),
+description String required maxlength(50),
+category Integer required,
+ecv BigDecimal required,
+indentId Long required,
+deptId Long required,
+status String required maxlength(25),
+remarks String required,
+parentTenderRef Integer required,
+noOfCalls Integer required,
+processId Integer required,
+csrValue BigDecimal required,
+ecvtenderyYn Boolean required,
+certificateId Integer required,
+paymentsVerified Integer required,
+dtsApprovalDate LocalDate required
+mandatoryClause String required,
+location Integer required,
+delegateTo Integer required,
+isApprovedBySelf Integer required,
+catWorkCategoryName String required maxlength(255),
+negotiationStatus String required maxlength(25),
+manualTenderYn Boolean required,
+districtId Long required,
+draftPublishStatus String required maxlength(50),
+csrRemarks String required,
+procEntityType Integer required,
+dtsApprovedBy String required maxlength(175)
+}
+
+entity TenderScheduleSample{
+nitId Long required,
+addressId Long required,
+name String required maxlength(50),
+designation String required maxlength(30),
+date LocalDate required
+}
+
+entity TenderScheduleSampleAddress{
+blockNumber String required,
+street String required,
+city String required,
+pin String required
+}
+
+entity TenderCriterionParameter{
+nitId Long required,
+indentItemId Long required,
+tenderCriterionId Long required,
+name String required maxlength(50),
+description String required maxlength(255),
+minValue BigDecimal required,
+maxValue BigDecimal required,
+operator String required,
+dataType String required,
+optionalYn Boolean required
+}
+
+entity TenderGoodsItems{
+nitId Long required,
+indentId Long required,
+categoryItemId Long required,
+entryOrder Integer required,
+itemCode String required,
+itemName String required,
+netAmt BigDecimalrequired,
+price BigDecimalrequired,
+quantity BigDecimalrequired,
+specifications String required,
+uomId Integer required,
+uomName String required
+}
+
+entity TenderScheduleGroupItems{
+tenderGoodsIndentItemId Long required,
+tenderScheduleGroupId Long required
+}
+
+entity TenderScheduleGroup{
+nitId Long required,
+name String required,
+mandateBidYn Boolean required,
+mandateGroupYn Boolean required
+}
+
+entity TenderCriterion{
+nitId Long required,
+criterionType String required,
+criterionCategory String required,
+name String required,
+description String required,
+weight Integer required
+}
+
+entity Criterion{
+type String required,
+criterionType String required,
+name String required,
+description String required,
+tenderCategory String required,
+activeYn Boolean required
+}
+
+entity CriterionDocument{
+documentName String required,
+tenderCategory String required,
+activeYn Boolean required
+}
+
+entity TenderCriterionDocument{
+nitId Long required,
+tenderCriterionId Long required,
+criterionId Long required,
+documentName String required,
+optional Boolean required
+}
+
+entity ObjectStore{
+nitId Long required,
+uuid String required, 
+referenceId Long required,
+referenceType Long required,
+activeYn Boolean required
+}
+
+entity TenderAddendum{
+nitId Long required,
+reason String required,
+description String required,
+status String required
+}
+
+entity TenderCorrigendum{
+nitId Long required,
+reason String required,
+historyOrder Integer required,
+tenderDocCloseDateOriginal LocalDate required,
+tenderDocCloseDateRevised LocalDate required,
+tenderReceiptCloseDateOriginal LocalDate required,
+tenderReceiptCloseDateRevised LocalDate required,
+tenderQueryCloseDateOriginal LocalDate required,
+tenderQueryCloseDateRevised LocalDate required,
+technicalBidOpenDateOriginal LocalDate required,
+technicalBidOpenDateRevised LocalDate required,
+financialBidOpenDateOriginal LocalDate required,
+financialBidOpenDateRevised LocalDate required,
+prequalBidOpenDateOriginal LocalDate required,
+prequalBidOpenDateRevised LocalDate required,
+status String required,
+prequalTendeBidOpenOriginal LocalDate required,
+prequalTenderBidOpenRevised LocalDate required,
+preBidMeetingDateOriginal LocalDate required,
+preBidMeetingDateRevised LocalDate required,
+prebidMeetingAddressOriginal LocalDate required,
+prebidMeetingAddressRevised LocalDate required,
+prequalValidityPeriodOriginal LocalDate required,
+prequalValidityPeriodRevised LocalDate required
+}
+
+entity TenderCorrigendumDetails{
+tenderCorrigendumId Long required,
+referenceNumber String required,
+readAs String required
+}
+
+entity TenderQuery{
+nitId Long required,
+supplierGeneralInfoId Long required,
+tenderQueryText String required,
+tenderQueryReponseId Long required,
+queriesPublished Boolean required
+}
+
+entity TenderScrutinyCommittee{
+nitId Long required,
+staffId Long required,
+tenderScrutinyActivityId Long required,
+}
+
+entity TenderScrutinyMaster{
+value String required,
+maxUsers Integer required,
+minUsers Integer required,
+activeYn Boolean required 
+}
+
+entity TenderQueryResponse{
+tenderQueryId Long required,
+staffGeneralInfoId Long required,
+tenderQueryResponseText String required
+}
+
+entity TenderScheduleTelephone{
+nitId Long required,
+staffGeneralInfoId Long required,
+tenderQueryId Long required,
+tenderQueryResponseText String required
+}
+
+entity Telephone{
+countryCode Integer required,
+areaCode Integer required,
+number String required, 
+type String required,
+mobOTP String required,
+mobOTPTS LocalDate required,
+mobOTPExpired Boolean required
+}
+
+entity SeriesTable{
+name String required,
+prefix String required,
+nextSeries String required
+}
+
+entity NoticeInvitingTender{
+evaluationType Integer required,
+prequalValidityPeriod LocalDate required,
+invitingStrategy Boolean required,
+minNoBidsReceive Integer required,
+procuringEntity Integer required,
+procuringEntityDesignation Integer required,
+procuringEntityAddress Integer required,
+invitingAuthority Integer required,
+invitingAuthorityDesignation Integer required,
+invitingAuthorityAddress Integer required,
+participatingCondnYn Boolean required,
+tenderFee BigDecimal required,
+emd BigDecimal required,
+bidValueType Boolean required,
+techWeightage Integer required,
+prequalTenderBidOpen LocalDate required,
+tenderDocClose LocalDate required,
+tenderReceiptClose LocalDate required,
+tenderQueryClose LocalDate required,
+technicalBidOpen LocalDate required,
+financialBidOpen LocalDate required,
+publishedDate LocalDate required,
+publishedBy Integer required,
+recalledDate LocalDate required,
+recalledBy Integer required,
+bidSubmissionStartDate LocalDate required,
+bidValidityPeriod Integer required,
+noOfCalls Integer required,
+preBidMeetingDate LocalDate required,
+preBidMeetingYn Boolean required,
+prebidMeetingAddress Integer required,
+preQualificationBidOpen LocalDate required,
+mandateAllItemsYn Boolean required,
+queriesPublished Boolean required,
+denominationType String required,
+retenderedYn Boolean required,
+percentageRateType String required,
+contactPerson String required,
+splitEmdRequiredYn Boolean required,
+emdBankGuarantee BigDecimal required,
+emdCash BigDecimal required,
+bgValidityPeriod Integer required,
+hideWeightage Boolean required,
+itemwiseTechEvalYn Boolean required,
+isMultipleSupplierSelectionAllowed Boolean required,
+techEvalStartDate LocalDate required,
+techEvalEndDate LocalDate required,
+commEvalStartDate LocalDate required,
+commEvalEndDate LocalDate required,
+emdVerifiedDate LocalDate required,
+multipleCurrencySelectionAllowedYn Boolean required,
+isEditable Boolean required,
+isEvaluated Boolean required,
+isTechWeightageAllowed Boolean required,
+isTechWeightageCompleted Boolean required,
+isCommercialBidEditCompleted Boolean required,
+templateYn Boolean required,
+templateId Long required,
+paymentVerifiedBy Integer required,
+paymentVerifiedDate LocalDate required,
+isItemwiseCsrRequired Boolean required
+isBidViewEnabled Boolean required,
+isNegotiationRequired Boolean required,
+highestBidderSelection Boolean required,
+isVariableEmdAllowed Boolean required,
+nitPublisherCertId Integer required,
+autoExtendYn Boolean required,
+noOfDaysExtend Integer required,
+isExtensionAvailable Boolean required,
+specialSchemeTender Boolean required,
+isBidValidityExpiryTaskCreated Boolean required,
+evaluationTypeFlag Boolean required,
+qcbsTenderYn Boolean required,
+publishedUser String required,
+isWorldBankFunded Boolean required,
+ecClearanceNumber String required,
+ecClearanceDate LocalDate required
+}
+
+paginate TenderSchedule, NoticeInvitingTender with pagination
+
+dto * with mapstruct
+
+service all with serviceImpl
+
+
+
+
