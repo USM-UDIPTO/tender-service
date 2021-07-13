@@ -43,6 +43,29 @@ public class CacheConfiguration {
     @Bean
     public JCacheManagerCustomizer cacheManagerCustomizer() {
         return cm -> {
+            createCache(cm, com.dxc.eproc.tender.domain.TenderSchedule.class.getName());
+            createCache(cm, com.dxc.eproc.tender.domain.TenderScheduleSample.class.getName());
+            createCache(cm, com.dxc.eproc.tender.domain.TenderScheduleSampleAddress.class.getName());
+            createCache(cm, com.dxc.eproc.tender.domain.TenderCriterionParameter.class.getName());
+            createCache(cm, com.dxc.eproc.tender.domain.TenderGoodsItems.class.getName());
+            createCache(cm, com.dxc.eproc.tender.domain.TenderScheduleGroupItems.class.getName());
+            createCache(cm, com.dxc.eproc.tender.domain.TenderScheduleGroup.class.getName());
+            createCache(cm, com.dxc.eproc.tender.domain.TenderCriterion.class.getName());
+            createCache(cm, com.dxc.eproc.tender.domain.Criterion.class.getName());
+            createCache(cm, com.dxc.eproc.tender.domain.CriterionDocument.class.getName());
+            createCache(cm, com.dxc.eproc.tender.domain.TenderCriterionDocument.class.getName());
+            createCache(cm, com.dxc.eproc.tender.domain.ObjectStore.class.getName());
+            createCache(cm, com.dxc.eproc.tender.domain.TenderAddendum.class.getName());
+            createCache(cm, com.dxc.eproc.tender.domain.TenderCorrigendum.class.getName());
+            createCache(cm, com.dxc.eproc.tender.domain.TenderCorrigendumDetails.class.getName());
+            createCache(cm, com.dxc.eproc.tender.domain.TenderQuery.class.getName());
+            createCache(cm, com.dxc.eproc.tender.domain.TenderScrutinyCommittee.class.getName());
+            createCache(cm, com.dxc.eproc.tender.domain.TenderScrutinyMaster.class.getName());
+            createCache(cm, com.dxc.eproc.tender.domain.TenderQueryResponse.class.getName());
+            createCache(cm, com.dxc.eproc.tender.domain.TenderScheduleTelephone.class.getName());
+            createCache(cm, com.dxc.eproc.tender.domain.Telephone.class.getName());
+            createCache(cm, com.dxc.eproc.tender.domain.SeriesTable.class.getName());
+            createCache(cm, com.dxc.eproc.tender.domain.NoticeInvitingTender.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }
