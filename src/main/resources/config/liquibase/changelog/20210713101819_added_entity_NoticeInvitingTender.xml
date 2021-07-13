@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity NoticeInvitingTender.
+    -->
+    <changeSet id="20210713101819-1" author="jhipster">
+        <createTable tableName="notice_inviting_tender">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="evaluation_type" type="integer">
+                <constraints nullable="false" />
+            </column>
+            <column name="prequal_validity_period" type="date">
+                <constraints nullable="false" />
+            </column>
+            <column name="inviting_strategy" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="min_no_bids_receive" type="integer">
+                <constraints nullable="false" />
+            </column>
+            <column name="procuring_entity" type="integer">
+                <constraints nullable="false" />
+            </column>
+            <column name="procuring_entity_designation" type="integer">
+                <constraints nullable="false" />
+            </column>
+            <column name="procuring_entity_address" type="integer">
+                <constraints nullable="false" />
+            </column>
+            <column name="inviting_authority" type="integer">
+                <constraints nullable="false" />
+            </column>
+            <column name="inviting_authority_designation" type="integer">
+                <constraints nullable="false" />
+            </column>
+            <column name="inviting_authority_address" type="integer">
+                <constraints nullable="false" />
+            </column>
+            <column name="participating_condn_yn" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="tender_fee" type="decimal(21,2)">
+                <constraints nullable="false" />
+            </column>
+            <column name="emd" type="decimal(21,2)">
+                <constraints nullable="false" />
+            </column>
+            <column name="bid_value_type" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="tech_weightage" type="integer">
+                <constraints nullable="false" />
+            </column>
+            <column name="prequal_tender_bid_open" type="date">
+                <constraints nullable="false" />
+            </column>
+            <column name="tender_doc_close" type="date">
+                <constraints nullable="false" />
+            </column>
+            <column name="tender_receipt_close" type="date">
+                <constraints nullable="false" />
+            </column>
+            <column name="tender_query_close" type="date">
+                <constraints nullable="false" />
+            </column>
+            <column name="technical_bid_open" type="date">
+                <constraints nullable="false" />
+            </column>
+            <column name="financial_bid_open" type="date">
+                <constraints nullable="false" />
+            </column>
+            <column name="published_date" type="date">
+                <constraints nullable="false" />
+            </column>
+            <column name="published_by" type="integer">
+                <constraints nullable="false" />
+            </column>
+            <column name="recalled_date" type="date">
+                <constraints nullable="false" />
+            </column>
+            <column name="recalled_by" type="integer">
+                <constraints nullable="false" />
+            </column>
+            <column name="bid_submission_start_date" type="date">
+                <constraints nullable="false" />
+            </column>
+            <column name="bid_validity_period" type="integer">
+                <constraints nullable="false" />
+            </column>
+            <column name="no_of_calls" type="integer">
+                <constraints nullable="false" />
+            </column>
+            <column name="pre_bid_meeting_date" type="date">
+                <constraints nullable="false" />
+            </column>
+            <column name="pre_bid_meeting_yn" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="prebid_meeting_address" type="integer">
+                <constraints nullable="false" />
+            </column>
+            <column name="pre_qualification_bid_open" type="date">
+                <constraints nullable="false" />
+            </column>
+            <column name="mandate_all_items_yn" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="queries_published" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="denomination_type" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="retendered_yn" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="percentage_rate_type" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="contact_person" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="split_emd_required_yn" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="emd_bank_guarantee" type="decimal(21,2)">
+                <constraints nullable="false" />
+            </column>
+            <column name="emd_cash" type="decimal(21,2)">
+                <constraints nullable="false" />
+            </column>
+            <column name="bg_validity_period" type="integer">
+                <constraints nullable="false" />
+            </column>
+            <column name="hide_weightage" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="itemwise_tech_eval_yn" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="is_multiple_supplier_selection_allowed" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="tech_eval_start_date" type="date">
+                <constraints nullable="false" />
+            </column>
+            <column name="tech_eval_end_date" type="date">
+                <constraints nullable="false" />
+            </column>
+            <column name="comm_eval_start_date" type="date">
+                <constraints nullable="false" />
+            </column>
+            <column name="comm_eval_end_date" type="date">
+                <constraints nullable="false" />
+            </column>
+            <column name="emd_verified_date" type="date">
+                <constraints nullable="false" />
+            </column>
+            <column name="multiple_currency_selection_allowed_yn" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="is_editable" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="is_evaluated" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="is_tech_weightage_allowed" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="is_tech_weightage_completed" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="is_commercial_bid_edit_completed" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="template_yn" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="template_id" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            <column name="payment_verified_by" type="integer">
+                <constraints nullable="false" />
+            </column>
+            <column name="payment_verified_date" type="date">
+                <constraints nullable="false" />
+            </column>
+            <column name="is_itemwise_csr_required" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="is_bid_view_enabled" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="is_negotiation_required" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="highest_bidder_selection" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="is_variable_emd_allowed" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="nit_publisher_cert_id" type="integer">
+                <constraints nullable="false" />
+            </column>
+            <column name="auto_extend_yn" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="no_of_days_extend" type="integer">
+                <constraints nullable="false" />
+            </column>
+            <column name="is_extension_available" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="special_scheme_tender" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="is_bid_validity_expiry_task_created" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="evaluation_type_flag" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="qcbs_tender_yn" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="published_user" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="is_world_bank_funded" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="ec_clearance_number" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="ec_clearance_date" type="date">
+                <constraints nullable="false" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20210713101819-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/notice_inviting_tender.csv"
+                  separator=";"
+                  tableName="notice_inviting_tender">
+            <column name="id" type="numeric"/>
+            <column name="evaluation_type" type="numeric"/>
+            <column name="prequal_validity_period" type="date"/>
+            <column name="inviting_strategy" type="boolean"/>
+            <column name="min_no_bids_receive" type="numeric"/>
+            <column name="procuring_entity" type="numeric"/>
+            <column name="procuring_entity_designation" type="numeric"/>
+            <column name="procuring_entity_address" type="numeric"/>
+            <column name="inviting_authority" type="numeric"/>
+            <column name="inviting_authority_designation" type="numeric"/>
+            <column name="inviting_authority_address" type="numeric"/>
+            <column name="participating_condn_yn" type="boolean"/>
+            <column name="tender_fee" type="numeric"/>
+            <column name="emd" type="numeric"/>
+            <column name="bid_value_type" type="boolean"/>
+            <column name="tech_weightage" type="numeric"/>
+            <column name="prequal_tender_bid_open" type="date"/>
+            <column name="tender_doc_close" type="date"/>
+            <column name="tender_receipt_close" type="date"/>
+            <column name="tender_query_close" type="date"/>
+            <column name="technical_bid_open" type="date"/>
+            <column name="financial_bid_open" type="date"/>
+            <column name="published_date" type="date"/>
+            <column name="published_by" type="numeric"/>
+            <column name="recalled_date" type="date"/>
+            <column name="recalled_by" type="numeric"/>
+            <column name="bid_submission_start_date" type="date"/>
+            <column name="bid_validity_period" type="numeric"/>
+            <column name="no_of_calls" type="numeric"/>
+            <column name="pre_bid_meeting_date" type="date"/>
+            <column name="pre_bid_meeting_yn" type="boolean"/>
+            <column name="prebid_meeting_address" type="numeric"/>
+            <column name="pre_qualification_bid_open" type="date"/>
+            <column name="mandate_all_items_yn" type="boolean"/>
+            <column name="queries_published" type="boolean"/>
+            <column name="denomination_type" type="string"/>
+            <column name="retendered_yn" type="boolean"/>
+            <column name="percentage_rate_type" type="string"/>
+            <column name="contact_person" type="string"/>
+            <column name="split_emd_required_yn" type="boolean"/>
+            <column name="emd_bank_guarantee" type="numeric"/>
+            <column name="emd_cash" type="numeric"/>
+            <column name="bg_validity_period" type="numeric"/>
+            <column name="hide_weightage" type="boolean"/>
+            <column name="itemwise_tech_eval_yn" type="boolean"/>
+            <column name="is_multiple_supplier_selection_allowed" type="boolean"/>
+            <column name="tech_eval_start_date" type="date"/>
+            <column name="tech_eval_end_date" type="date"/>
+            <column name="comm_eval_start_date" type="date"/>
+            <column name="comm_eval_end_date" type="date"/>
+            <column name="emd_verified_date" type="date"/>
+            <column name="multiple_currency_selection_allowed_yn" type="boolean"/>
+            <column name="is_editable" type="boolean"/>
+            <column name="is_evaluated" type="boolean"/>
+            <column name="is_tech_weightage_allowed" type="boolean"/>
+            <column name="is_tech_weightage_completed" type="boolean"/>
+            <column name="is_commercial_bid_edit_completed" type="boolean"/>
+            <column name="template_yn" type="boolean"/>
+            <column name="template_id" type="numeric"/>
+            <column name="payment_verified_by" type="numeric"/>
+            <column name="payment_verified_date" type="date"/>
+            <column name="is_itemwise_csr_required" type="boolean"/>
+            <column name="is_bid_view_enabled" type="boolean"/>
+            <column name="is_negotiation_required" type="boolean"/>
+            <column name="highest_bidder_selection" type="boolean"/>
+            <column name="is_variable_emd_allowed" type="boolean"/>
+            <column name="nit_publisher_cert_id" type="numeric"/>
+            <column name="auto_extend_yn" type="boolean"/>
+            <column name="no_of_days_extend" type="numeric"/>
+            <column name="is_extension_available" type="boolean"/>
+            <column name="special_scheme_tender" type="boolean"/>
+            <column name="is_bid_validity_expiry_task_created" type="boolean"/>
+            <column name="evaluation_type_flag" type="boolean"/>
+            <column name="qcbs_tender_yn" type="boolean"/>
+            <column name="published_user" type="string"/>
+            <column name="is_world_bank_funded" type="boolean"/>
+            <column name="ec_clearance_number" type="string"/>
+            <column name="ec_clearance_date" type="date"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>
